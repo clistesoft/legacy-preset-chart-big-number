@@ -135,7 +135,7 @@ class BigNumberVis extends React.PureComponent<BigNumberVisProps, {}> {
   }
 
   renderHeader(maxHeight: number) {
-    const { bigNumber, countryCode, formatNumber, width } = this.props;
+    const { bigNumber, formatNumber, width } = this.props;
     const text = bigNumber === null ? t('No data') : formatNumber(bigNumber);
 
     const container = this.createTemporaryContainer();
@@ -280,9 +280,6 @@ class BigNumberVis extends React.PureComponent<BigNumberVisProps, {}> {
       const allTextHeight = 'auto'; // height - chartHeight;
 
       var imgUrl = countryCode ? '/static/assets/images/' + countryCode + '.svg' : '';
-      var mapStyle = {
-        backgroundImage: 'url(' + imgUrl + ')',
-      };
       return (
         <div className={className} style={{ position: 'relative' }}>
           <img src={imgUrl} alt={countryCode} className="mapbg-img" />
